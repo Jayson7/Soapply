@@ -1,26 +1,38 @@
-var ulDropper = document.querySelector("nav ul li:nth-child(1)");
-var dropdowns = document.querySelector("nav ul li ul")
-ulDropper.addEventListener("mouseover", () => {
-    dropdowns.style.display = "block";
-})
-ulDropper.addEventListener("mouseout", () => {
-    dropdowns.style.display = "none";
-})
-window.addEventListener("load", function() {
-    var nav = document.querySelector(".nav");
-    var nav_active = document.querySelectorAll(".nav-active");
-    var toggles = document.querySelector(".bar");
-
-    var ol = document.querySelector("ol");
-
-
-    toggles.addEventListener("click", function() {
-        nav.classList.toggle("nav-active")
-
+window.addEventListener("load", () => {
+    var toggle = document.querySelector(".toggle i");
+    var mainbody = document.querySelector(".mainbody");
+    toggle.addEventListener("click", () => {
         setTimeout(() => {
-            ol.classList.toggle("uls")
-        }, 100);
+            mainbody.classList.toggle("mainbody-active")
 
+
+        }, 400);
     })
+})
 
+
+$('.owl-carousel').owlCarousel({
+    loop: true,
+    items: 3,
+    autoplayTimeout: 7000,
+    autoplayHoverPause: true,
+
+    responsiveClass: true,
+    autoplay: true,
+    nav: false,
+    dots: true,
+    responsive: {
+        0: {
+            items: 1,
+        },
+        600: {
+            items: 1,
+
+        },
+        1000: {
+            items: 1,
+
+
+        }
+    }
 })
